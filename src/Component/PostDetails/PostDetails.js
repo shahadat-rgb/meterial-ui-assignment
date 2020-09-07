@@ -11,7 +11,7 @@ const PostDetails = () => {
     const  {postId} =useParams();
     const [postDetails,setPostDetails] =useState({})
     useEffect(()=>{
-        const url=`http://jsonplaceholder.typicode.com/posts/${postId}`
+        const url=`https://jsonplaceholder.typicode.com/posts/${postId}`
         fetch(url)
         .then(res => res.json())
         .then(data => setPostDetails(data) )
@@ -19,7 +19,7 @@ const PostDetails = () => {
    
   const [comment,setComment] =useState([])
     useEffect(()=>{
-        const url=`http://jsonplaceholder.typicode.com/comments?postId=${postId}`
+        const url=`https://jsonplaceholder.typicode.com/comments?postId=${postId}`
         fetch(url)
         .then(res => res.json())
         .then(data => setComment(data))
@@ -29,7 +29,7 @@ const useStyle={
         margin:'0 auto',
         border:'none',
         boxShadow:'2px 2px 5px gray',
-        width:'60%',
+        width:'80%',
         backgroundColor:'lightgray',
         marginTop:'30px',
         padding:'10px',

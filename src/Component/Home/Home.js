@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Grid,} from '@material-ui/core';
 import Post from '../Post/Post';
 
-
-
 const Home = () => {
     const [post,seetPost] =useState([]);
        useEffect(()=>{
-       fetch('http://jsonplaceholder.typicode.com/posts')
+       fetch('https://jsonplaceholder.typicode.com/posts')
        .then(res => res.json())
        .then(data => seetPost(data))
  
@@ -15,7 +13,7 @@ const Home = () => {
     return (
         <>
             
-           <h1 style={{textAlign:'center'}}>Differents Post</h1>
+           <h1 style={{textAlign:'center'}}>Different kinds of Post</h1>
         <Grid container spacing={2}>
           {post.map(pt =><Grid item  md={4}>
 
